@@ -1,0 +1,28 @@
+# references the file df3(csv file)
+import pandas as pd
+import matplotlib.pyplot as plt
+df3 = pd.read_csv('df3')
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+df3.info()
+
+df3.head()
+
+get_ipython().run_line_magic('matplotlib', 'inline')
+df3.plot.scatter(x='a',y='b',c='blue',s=50,figsize=(12,3))
+
+df3['a'].hist()
+
+plt.style.use('ggplot')
+
+df3['a'].hist(bins=30,alpha=.5,color='red')
+
+df3[['a','b']].plot.box()
+
+df3['d'].plot.kde()
+
+df3['d'].plot.kde(linewidth=8,ls='--')
+
+df3.ix[0:30].plot.area(alpha=.7)
+plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+plt.show()
